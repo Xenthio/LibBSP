@@ -18,6 +18,10 @@ namespace LibBSP {
 	using Color = NeoAxis.ColorByte;
 	using Vector2 = NeoAxis.Vector2F;
 	using Vector3 = NeoAxis.Vector3F;
+#elif SANDBOX
+	using Color = Color;
+	using Vector2 = System.Numerics.Vector2;
+	using Vector3 = System.Numerics.Vector3;
 #else
 	using Color = System.Drawing.Color;
 	using Vector2 = System.Numerics.Vector2;

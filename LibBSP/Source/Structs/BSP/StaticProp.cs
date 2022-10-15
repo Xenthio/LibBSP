@@ -16,6 +16,10 @@ namespace LibBSP {
 #elif NEOAXIS
 	using Color = NeoAxis.ColorByte;
 	using Vector3 = NeoAxis.Vector3F;
+	
+#elif SANDBOX
+	using Color = Color;
+	using Vector3 = System.Numerics.Vector3;
 #else
 	using Color = System.Drawing.Color;
 	using Vector3 = System.Numerics.Vector3;

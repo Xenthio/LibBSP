@@ -9,6 +9,8 @@ namespace LibBSP {
 	using Color = UnityEngine.Color32;
 #elif GODOT
 	using Color = Godot.Color;
+#elif SANDBOX
+	using Color = Color;
 #else
 	using Color = System.Drawing.Color;
 #endif

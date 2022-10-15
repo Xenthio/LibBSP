@@ -22,6 +22,11 @@ namespace LibBSP {
 	using Vector2 = Godot.Vector2;
 	using Vector3 = Godot.Vector3;
 	using Vector4 = Godot.Quat;
+#elif SANDBOX
+	using Color = Color;
+	using Vector2 = System.Numerics.Vector2;
+	using Vector3 = System.Numerics.Vector3;
+	using Vector4 = System.Numerics.Vector4;
 #else
 	using Color = System.Drawing.Color;
 	using Vector2 = System.Numerics.Vector2;

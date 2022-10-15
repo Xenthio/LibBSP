@@ -27,6 +27,11 @@ namespace LibBSP {
 	using Vector3 = NeoAxis.Vector3F;
 	using Vector4 = NeoAxis.Vector4F;
 	using Vertex = NeoAxis.StandardVertex;
+#elif SANDBOX
+	using Color = Color;
+	using Vector2 = System.Numerics.Vector2;
+	using Vector3 = System.Numerics.Vector3;
+	using Vector4 = System.Numerics.Vector4;
 #else
 	using Color = System.Drawing.Color;
 	using Vector2 = System.Numerics.Vector2;
