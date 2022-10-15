@@ -9,6 +9,8 @@ namespace LibBSP {
 	using Color = Godot.Color;
 #elif NEOAXIS
 	using Color = NeoAxis.ColorByte;
+#elif SANDBOX
+	using Color = Color;
 #else
 	using Color = System.Drawing.Color;
 #endif
@@ -17,7 +19,7 @@ namespace LibBSP {
 	/// Static class containing helper methods for <c>Color</c> objects.
 	/// </summary>
 	public static partial class ColorExtensions {
-		
+
 		/// <summary>
 		/// Constructs a new <c>Color</c> from the passed values.
 		/// </summary>
@@ -33,6 +35,8 @@ namespace LibBSP {
 			return new Color((byte)r << 24 | (byte)g << 16 | (byte)b << 8 | (byte)a);
 #elif NEOAXIS
 			return new Color(r, g, b, a);
+#elif SANDBOX
+			return Color.FromBytes( r, g, b, a );
 #else
 			return Color.FromArgb(a, r, g, b);
 #endif
@@ -60,6 +64,11 @@ namespace LibBSP {
 			bytes[1] = color.Green;
 			bytes[2] = color.Blue;
 			bytes[3] = color.Alpha;
+#elif SANDBOX
+			bytes[0] = (byte)(color.r * 255);
+			bytes[1] = (byte)(color.g * 255);
+			bytes[2] = (byte)(color.b * 255);
+			bytes[2] = (byte)(color.a * 255);
 #else
 			bytes[0] = color.R;
 			bytes[1] = color.G;
@@ -81,6 +90,8 @@ namespace LibBSP {
 			return (byte)color.a8;
 #elif NEOAXIS
 			return color.Alpha;
+#elif SANDBOX
+			return (byte)(color.a * 255);
 #else
 			return color.A;
 #endif
@@ -98,6 +109,8 @@ namespace LibBSP {
 			return (byte)color.r8;
 #elif NEOAXIS
 			return color.Red;
+#elif SANDBOX
+			return (byte)(color.r * 255);
 #else
 			return color.R;
 #endif
@@ -115,6 +128,8 @@ namespace LibBSP {
 			return (byte)color.g8;
 #elif NEOAXIS
 			return color.Green;
+#elif SANDBOX
+			return (byte)(color.g * 255);
 #else
 			return color.G;
 #endif
@@ -132,6 +147,8 @@ namespace LibBSP {
 			return (byte)color.b8;
 #elif NEOAXIS
 			return color.Blue;
+#elif SANDBOX
+			return (byte)(color.b * 255);
 #else
 			return color.B;
 #endif
